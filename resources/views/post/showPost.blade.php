@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@extends('layouts.assets')
 @include('partials.user_sidebar')
 
     @section('content')

@@ -19,8 +19,18 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers{
+        redirectPath as laravelRedirectPath;
+    }
 
+    public function redirectPath()
+    {
+        // Do your logic to flash data to session...
+        session()->flash('logedin', 'Welcome  '."<span style='color: black;'><u><i>".Auth::user()->name."</i></u></span>");
+
+        // Return the results of the method we are overriding that we aliased.
+        return $this->laravelRedirectPath();
+    }
     /**
      * Where to redirect users after login.
      *

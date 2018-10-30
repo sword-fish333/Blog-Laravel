@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\User as User;
 class Post extends Model
 {
-    protected $fillable=['title','body','author'];
+    protected $fillable=['title','body','category_id','photo_id','author'];
     protected $table='posts';
 
+    //function for returning the path of one post
     public  function path(){
         return '/posts/'.$this->id;
     }
@@ -26,5 +27,13 @@ class Post extends Model
 
     public function user(){
         return $this->belongsTo('App\User');
+    }
+
+    public function photo(){
+        return $this->belongsTo('App\Photo');
+    }
+
+    public function category(){
+        return $this->belongsTo('App\Category');
     }
 }

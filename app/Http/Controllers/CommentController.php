@@ -12,7 +12,7 @@ class CommentController extends Controller
                 $request, array(
                     'name'=>'required|max:255',
                     'email'=>'required|email|max:255',
-                    'comment'=>'required|min:5|max:2000'
+                    'comment'=>'required|min:5|max:5000'
                 ));
             //find the post with which the comment is associated
             $post=Post::find($post_id);

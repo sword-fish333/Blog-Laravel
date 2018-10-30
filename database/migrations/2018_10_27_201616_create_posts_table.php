@@ -16,7 +16,10 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('body');
+            $table->longText('body');
+            $table->boolean('status')->default(1);
+            $table->integer('category_id')->default(1);
+            $table->string('photo_id')->default(1);
             $table->integer('author');
             $table->timestamps();
         });

@@ -14,15 +14,10 @@ class HomeController extends Controller
 
 
     public function main()
-    {
-        return view('home');
+    {   $posts=Post::orderByDesc('created_at')->get();
+
+        return view('post.index',array('posts'=>$posts));
     }
 
-    //function to see all posts for a new user
-    public function firstPage(){
-        $posts=Post::orderByDesc('created_at')->get();
-
-        return view('post.index',compact('posts'));
-    }
 
 }

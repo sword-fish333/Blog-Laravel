@@ -17,7 +17,7 @@ class FormController extends Controller
         $this->validate(
             $request, array(
             'title'=>'required|max:255',
-            'content'=>'required|min:5|max:2000'
+            'content'=>'required|min:5|max:9999999999'
         ));
 
             $post=Post::create(array(

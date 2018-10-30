@@ -9,26 +9,35 @@ use App\User as User;
 class PostController extends Controller
 {
 
-    public function viewPosts(){
-        $posts=Post::orderByDesc('created_at')->get();
+    public function viewPosts()
+    {
+        $posts = Post::orderByDesc('created_at')->get();
 
-        return view('post.posts',compact('posts'));
+        return view('post.posts', array('posts' => $posts));
     }
 
-    public  function viewOnePost(Post $id){
-        $post=new Post();
-                $post=$id;
-        return view('post.showPost',compact('post'));
+    public function viewOnePost(Post $id)
+    {
+        $post = new Post();
+        $post = $id;
+        return view('post.showPost', array('post' => $post));
     }
 
-    public function personalPosts(){
-        $author=Auth::user()->id;
-        $user=User::find($author);
+    public function personalPosts()
+    {
+        $author = Auth::user()->id;
+        $user = User::find($author);
         $posts = Post::where("author", "=", $user->id)->get();
 
-    //dd($posts);
-        return view('post.personal_posts',compact('posts'));
+        //dd($posts);
+        return view('post.personal_posts', array('posts' => $posts));
     }
 
-}
 
+    public function userDashboard()
+    {
+        $posts = Post::orderByDesc('created_at')->get();
+
+        return view('users.dashboard', array('posts' => $posts));
+    }
+}

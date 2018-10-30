@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Slabo+27px');
+
+.post-title{
+    font-style: italic;
+    font-family: 'PT Serif', serif;
+}
+
+.logo{
+    border-radius: 20px;
+    border:1px solid black;
+    width:2.0em;
+}
+
+.blog-main{
+    background: #2F4F4F;
+    color:white;
+    font-family: 'Slabo 27px', serif;
+}
+
+.post-info a{
+   color:	#FFF8DC;
+    font-weight: bold;
+}
+
+.post-info a:hover{
+    color:#B22222;
+
+}
+
+.navbar{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.1em;
+}
+.navbar .nav-link{
+    color:white;
+}
+
+.navbar .dropdown-item{
+    color:black !important;
+}
+
+body{
+    /* The image used */
+    background-image:url( '/images/back_poster.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog-sidebar{
+    color:white;
+}
+
+.blog-sidebar li a{
+    color:white;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.2em;
+}
+
+.user_name{
+    color:	#A52A2A;
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+
+}
+
+.sidebar{
+    position: fixed;
+    top: 70px;
+    left:0;
+    overflow-x: hidden;
+    overflow-y:auto;
+    height:100%;
+}
+.sidebar .first_link{
+    margin-top:30px;
+}
+
+.sidebar .nav{
+    margin-bottom:20px;
+    font-weight: bold;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.2em;
+}
+.sidebar .nav-item{
+    width:100%;
+
+}
+.sidebar .nav-link{
+    color: black ;
+}
+.sidebar a:hover:not(.active) {
+    background-color: black;
+    color: white;
+}
+.nav-item a{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color:white;
+}
+
+.main_title{
+    color:	#A52A2A;
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+}
+.form_label{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color:#A52A2A;
+}
+.posts_title{
+    color:	#A52A2A;
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    font-style: italic;
+}
+
+.posts_body{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.2em;
+
+}
+.post_content{
+    margin-top:100px;
+    margin-left:270px;
+}
+
+.message{
+    color:red !important;
+    margin-top: 10px;
+}
+.author_info{
+    float:left;
+    color:black;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1em;
+}
+.author{
+
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.4em;
+    margin-left: 10px;
+}
+.date_info{
+    float:left;
+    margin-left: 20px;
+    color:black;
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.2em;
+    margin-top:1px;
+}
+
+.comment_info{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.4em;
+    color:black;
+}
+
+.comment_name{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.4em;
+    color:black;
+    padding-left: 20px;
+}
+
+.comment_body{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.1em;
+    color:black;
+    padding-left: 20px;
+}
+#comment_title{
+    padding-top: 40px;
+    color:	white;
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    font-size: 2em;
+
+}
+
+.table th{
+
+    color:	white;
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    font-size: 1.2em;
+}
+
+
+.table td{
+
+    color:	white;
+    font-family:  'Slabo 27px', serif;
+
+    font-size: 1.2em;
+}
+
+.footer{
+    color:	white;
+    font-family:  'Slabo 27px', serif;
+    font-size: 1em;
+    background: #343a40;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+}
+
+footer .footer-box{
+    width: 33.3333%;
+    margin: auto;
+}
+
+footer .footer-box .fab{
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.6em;
+    margin-left:20px;
+    color: black;
+    font-size: 15px;
+}
+
+.side_admin{
+    background: white;
+    color: black;
+    font-family:  'Slabo 27px', serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.table_head th {
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    color:black !important;
+}
+.table_body td{
+    color:black !important;
+    font-family:  'Slabo 27px', serif;
+    font-size: 1em;
+}
+
+.post_t{
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    color:	#A52A2A;
+    text-align: center;
+}
+
+.jumbotron_title{
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    color:white;
+    text-align: center;
+    font-size: 4em;
+}
+.jumbotron{
+    margin-top: 80px;
+    padding:80px;
+    background-image: url('/images/back.jpeg');
+
+    /* Set a specific height */
+    height: 300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
