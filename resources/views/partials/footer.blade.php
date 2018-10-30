@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="custom_footer">
     <div class="container">
         <div class="footer-box">
             <p>Copyright &copy; 2018 The Blog</p>

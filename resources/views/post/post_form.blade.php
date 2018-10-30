@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @extends('layouts.assets')
-@include('partials.user_sidebar')
+
 @section('content')
+    @include('partials.user_sidebar')
     <div class="container mt-5 " style="margin-bottom: 100px;">
         <div class="row">
 
@@ -10,30 +11,47 @@
         <main >
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Write your ideas with passion</h4>
+
 
                     <form class="floating-labels m-t-40" action="/posts" method="post"  enctype="multipart/form-data">
                         <div class="form-group m-b-40">
                             <input name="title" type="text" class="form-control" id="title">
                             <span class="bar"></span>
-                            <label for="title">Regular Input</label>
+                            <label for="title">Title</label>
                         </div>
 
 
                         <div class="form-group m-b-40">
-                            <select class="form-control p-0" id="input6">
+                            <select class="form-control p-0" id="category">
                                 <option></option>
                                 <option>Male</option>
                                 <option>Female</option>
                             </select><span class="bar"></span>
-                            <label for="input6">Gender</label>
+                            <label for="category">Category</label>
                         </div>
-                        <div class="form-group m-b-5">
-                            <textarea name="content" class="form-control" rows="5" id="content"></textarea>
+                        <div class="form-group">
+
+                            <div class="input-group">
+                                <div class="input-group-prepend " style="margin-top: 5px;">
+                                    <span class="input-group-text">Upload Image</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="status">
+                            <label class="custom-control-label pl-4" for="status">&nbsp;Published</label>
+                        </div>
+
+                        <div class="form-group m-b-5 mt-5">
+                            <textarea name="content" class="form-control" rows="10" id="content"></textarea>
                             <span class="bar"></span>
-                            <label for="content">Text area</label>
+                            <label for="content">Write content of post here:</label>
                         </div>
-                        <div class="form-group m-b-5">
+                        <div class="form-group m-b-5 mt-4">
                         <button class="btn btn-info btn-block btn-lg" value="submit">Submit Post</button>
                         </div>
                     </form>
@@ -42,8 +60,6 @@
           </main>
         </div>
      </div>
-
-            <div class="col-8">
 
     </div>
 

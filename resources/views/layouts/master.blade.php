@@ -15,6 +15,7 @@
 
 <body>
 @include('partials.header')
+
 @yield('content')
 @include('partials.footer')
 <script type="text/javascript" src="{{ URL::to('js/jquery.min.js') }}"></script>

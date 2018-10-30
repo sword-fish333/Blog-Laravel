@@ -1,3 +1,5 @@
+@extends('users.admin')
+@section('text')
 <div class="col-10 offset-1 " style="margin-top: 150px; margin-bottom: 20px;">
     <div class="card">
         <div class="card-body">
@@ -41,3 +43,4 @@
         </div>
     </div>
 </div>
+@endsection

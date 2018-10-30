@@ -204,7 +204,7 @@ body{
     font-size: 1.2em;
 }
 
-.footer{
+.custom_footer{
     color:	white;
     font-family:  'Slabo 27px', serif;
     font-size: 1em;
@@ -212,7 +212,7 @@ body{
     text-align: center;
     padding: 10px 0;
     position: fixed;
-    width: 100%;
+    width: 100% !important;
     bottom: 0;
     z-index: 2;
 }

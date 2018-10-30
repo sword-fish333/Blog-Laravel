@@ -19,6 +19,6 @@ class AdminController extends Controller
         }
 
         $count = $affected;
-        return view('users.admin', array('posts'=>$posts,'count'=>$count));
+        return view('post.posts_table', array('posts'=>$posts,'count'=>$count));
     }
 }

@@ -36,4 +36,19 @@ class Post extends Model
     public function category(){
         return $this->belongsTo('App\Category');
     }
+
+    public static function postNr(){
+
+        $affected = 0;
+        $posts=Post::orderByDesc('created_at')->get();
+        foreach ($posts as $value) {
+            $post = Post::firstOrNew(['id' => $value['id']]);
+            $post->save();
+
+            $affected++;
+        }
+
+        $count = $affected;
+        return $count;
+    }
 }

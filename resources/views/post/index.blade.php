@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@extends('layouts.assets')
     @section('title')
         The Blog
     @endsection

@@ -40,4 +40,20 @@ class PostController extends Controller
 
         return view('users.dashboard', array('posts' => $posts));
     }
+
+    public static function postNr(){
+
+        $affected = 0;
+        $posts=Post::orderByDesc('created_at')->get();
+        foreach ($posts as $value) {
+            $post = Post::firstOrNew(['id' => $value['id']]);
+            $post->save();
+
+            $affected++;
+        }
+
+        $count = $affected;
+        return $count;
+    }
+
 }
