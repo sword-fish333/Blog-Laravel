@@ -16,9 +16,15 @@
                 <p class="post_category">Category of post:  &nbsp;<span style="color: #A52A2A;"><u>{{$post->category}}</u></span></p>
             </div>
             <div class="card-body posts_body">
+                <div class="row">
+                <div class="col-md-4" >
                 @if($post->image!=1)
                 <img  class="img-thumbnail" src="{{Storage::disk('local')->url($post->image)}}" alt="" style=" width:350px;">
-                <p>{{$post->body}}</p>
+                </div>
+                <div class="col-md-5" style="float: right;">
+                    <p>{{$post->body}}</p>
+                </div>
+                </div>
                 @endif
             </div>
 

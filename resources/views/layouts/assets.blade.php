@@ -33,22 +33,25 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/custom_main.css')}}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
 </head>
 
 <body >
 <!-- ============================================================== -->
-<!-- Preloader - style you can find in spinners.css -->
-<!-- ============================================================== -->
-<div class="preloader">
-    <div class="loader">
-        <div class="loader__figure"></div>
-    </div>
-</div>
+
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
-<div id="main-wrapper">
 
+    <script type="text/javascript" src="{{ URL::to('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('js/bootstrap.min.js') }}"></script>
     <!-- ============================================================== -->
     <script src="{{asset('assets/node_modules/jquery/jquery-3.2.1.min.js')}}"></script>
     <!-- Bootstrap popper Core JavaScript -->
@@ -79,7 +82,6 @@
     <script src="{{asset('dist/js/custom.min.js')}}"></script>
     <script src="{{asset('dist/js/pages/jasny-bootstrap.js')}}'"></script>
     <script src="{{asset('assets/node_modules/toast-master/js/jquery.toast.js')}}"></script>
-    <!-- Chart JS -->
-    <script src="{{asset('dist/js/dashboard1.js')}}"></script>
+
 </body>
 

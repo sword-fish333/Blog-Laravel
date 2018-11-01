@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title posts_t" style="display: inline;">Posts Table </h4>
-            <a href="{{route('createPost')}}" class="btn btn-success  btn-lg mt-3 offset-1" style="margin-bottom: 30px;">Create a new Post</a>
+            <a href="{{route('adminShowCreate')}}" class="btn btn-success  btn-lg mt-3 offset-1" style="margin-bottom: 30px;">Create a new Post</a>
             <div class="table-responsive text-center">
                 <table class="table">
                     <thead class="table_head">

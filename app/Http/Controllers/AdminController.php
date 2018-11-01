@@ -6,6 +6,8 @@ use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use Session;
+use App\Category;
+
 class AdminController extends Controller
 {
     public function postsTable(){
@@ -17,7 +19,7 @@ class AdminController extends Controller
 //
 //            $affected++;
 //        }
-//
+
 //        $count = $affected;
 //        $posts='';
         $posts=Post::orderByDesc('created_at')->get();
@@ -33,5 +35,16 @@ class AdminController extends Controller
         user::where('id',$id)->delete();
         Session::flash('message', 'user deleted successfully!');
         return redirect()->back();
+    }
+
+    public function createAdminPost()
+    {
+        $categories=Category::all();
+        return view('post.adminCreatePost',array('categories'=>$categories));
+    }
+
+    public function adminPosts(){
+        $posts=Post::orderByDesc('created_at')->paginate(4);
+        return view('post.adminPosts',array('posts'=>$posts));
     }
 }

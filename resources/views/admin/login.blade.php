@@ -1,14 +1,11 @@
 @extends('layouts.master')
 @section('content')
-<div class="col-md-6 offset-3 mt-5">
+<div class="col-md-6 offset-3 mt-3">
     <div class="card card-body">
         <h3 class="box-title m-b-0 admin_login_title">Admin Login</h3>
-        <p class="admin_login_sign">Sign in to start session</p>
+        <p class="admin_login_sign">Login to start session</p>
         @include('partials.messages')
-        <p>
-            {{ $errors->first('email') }}
-            {{ $errors->first('password') }}
-        </p>
+
 
         <form class="form-horizontal" action="{{route('adminLogin')}}" method="post">
             {{csrf_field()}}

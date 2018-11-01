@@ -1,4 +1,4 @@
-@extends('layouts.master')
+
 @extends('layouts.assets')
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +36,7 @@
 </head>
 
 <body >
+@include('partials.header')
 <!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
@@ -49,7 +50,7 @@
 <!-- ============================================================== -->
 <div id="main-wrapper">
     <!-- ============================================================== -->
-@include('partials.header')
+
     <!-- ============================================================== -->
     <!-- Left Sidebar -->
     <!-- ============================================================== -->
@@ -106,8 +107,7 @@
         <script src="{{asset('dist/js/custom.min.js')}}"></script>
         <script src="{{asset('dist/js/pages/jasny-bootstrap.js')}}'"></script>
 <script src="{{asset('assets/node_modules/toast-master/js/jquery.toast.js')}}"></script>
-<!-- Chart JS -->
-<script src="{{asset('dist/js/dashboard1.js')}}"></script>
+
 </body>
 
 </html>
