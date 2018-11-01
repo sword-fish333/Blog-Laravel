@@ -11,24 +11,63 @@
 |
 */
 
-Route::get('/', 'HomeController@main')->name('firstPage');
-    Auth::routes();
-Route::get('/dashboard', 'PostController@userDashboard')->name('user_dashboard');
-    Route::get('/home', 'HomeController@main')->name('home');
+Auth::routes();
 
-    Route::get('/author/post','FormController@getPostForm')->name('post.form');
+  //  Route::get('/home', 'HomeController@index')->name('firstPage');
 
-    //route with post method for fetching the data from the user
-    Route::post('/author/post','FormController@createPost')->name('writePost');
-    Route::get('/posts','PostController@viewPosts')->name('post.posts');
-    Route::get('/posts/{id}','PostController@viewOnePost')->name('viewOnePost');
+    Route::get('/allPosts','PostController@firstPage')->name('firstPage');
 
-    //route for submiting a comment
-    Route::post('/posts/{id}',['uses'=>'CommentController@postComment','as'=>'comments.postComment']);
-    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    Route::get('admin/home','HomeController@adminPage')->name('adminPage');
 
-    //route for posts that wore posted only by the user
-    Route::get('/personalposts','PostController@personalPosts')->name('personalposts');
+    Route::get('/posts','PostController@index')->name('showPosts');
 
-    //admin panel
-Route::get('/admin','AdminController@postsTable')->name('postsTable');
+    Route::get('/posts/create','PostController@create')->name('createPost');
+
+
+
+
+
+    Route::post('/posts/create','PostController@store')->name('create');
+    //admin panel with all posts
+    Route::get('/admin','AdminController@postsTable')->name('postsTable');
+
+    //admin panel with all user
+    Route::get('admin/users','AdminController@usersTable')->name('usersTable');
+
+    Route::get('/admin/category','CategoryController@index')->name('createCategory');
+
+   Route::post('/admin/category','CategoryController@store')->name('storeCategory');
+
+   Route::get('/admin/categorytable','CategoryController@tableCategory')->name('categoryTable');
+
+   //route for deleting category
+    Route::delete('/admin/category/{id}','CategoryController@destroy')->name('destroyCategory');
+    //go to eedit page
+    Route::get('/admin/post/{id}','PostController@edit')->name('editPost');
+    //delete post
+    Route::delete('/admin/post/{id}','PostController@destroy')->name('destroyPost');
+
+    //view one post
+    Route::get('/post/{id}','PostController@show')->name('showOnePost');
+    //route for updating a post
+    Route::patch('/postupdate/{id}','PostController@update')->name('updatePost');
+
+        //route for comments
+Route::post('/post/{post_id}','CommentController@store')->name('saveComment');
+
+
+
+//route for posts that wore posted only by the user that is loged in
+Route::get('/personalposts','PostController@personalPosts')->name('personalPosts');
+
+Route::get('/category/{category}','CategoryController@display')->name('categoryPosts');
+
+    //route for deleting user
+    Route::delete('/admin/users/{id}','AdminController@deleteUser')->name('deleteUser');
+
+    //route for login admin
+    Route::get('/admin_login','Admin\Auth\LoginController@showLogin')->name('adminLogin');
+    Route::post('/admin_login','Admin\Auth\LoginController@loginForm');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+

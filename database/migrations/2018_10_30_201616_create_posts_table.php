@@ -17,19 +17,22 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->longText('body');
-            $table->boolean('status')->default(1);
-            $table->integer('category_id')->default(1);
-            $table->string('photo_id')->default(1);
-            $table->integer('author');
+            $table->boolean('status');
+            $table->string('category');
+            $table->string('image');
+            $table->integer('author')->unsigned();
+
+            $table->foreign('author')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
+
         });
+
+
+
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('posts');

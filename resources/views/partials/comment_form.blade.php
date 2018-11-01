@@ -1,20 +1,33 @@
-<div class="row offset-2 mt-4 pl-5">
+<div class="col-md-8 " style="margin-top:50px;">
     <div id="comment-form ">
-        {{Form::open(['route'=>['comments.postComment',$post->id],'method'=>'POST'])}}
-        <div class="row">
-        <div class="col-md-4 form-group ml-2">
-         {{Form::label('name','Name:',['class'=>'comment_info'])}}
-            {{Form::text('name',null,['class'=>'form-control comment_info'])}}
-        </div>
-        <div class="col-md-4 form-group ml-5">
-            {{Form::label('email','Email:',['class'=>'comment_info'])}}
-            {{Form::text('email',null,['class'=>'form-control'])}}
-        </div>
-            <div class="col-md-9 form-group">
-                {{Form::label('comment','Comment:',['class'=>'comment_info'])}}
-                {{Form::textarea('comment',null,['class'=>'form-control'])}}
+        <div class="card">
+            <div class="card-body">
 
-                {{Form::submit('Add comment',['class'=>'btn btn-success btn-block mt-4'])}}
+                <h4 class="card-title" id="comment_title" style="display: inline;">Comment</h4>
+                @if(session()->has('message'))
+                    <div class="alert col-md-4 text-center  alert-success " style="float: right; margin-right: 50px;" >
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+                <form class="form-material m-t-40" action="{{route('saveComment',$post->id)}}" method="post">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <label class="comment_info" for="name">Name:</label>
+                        <input type="text" class="form-control form-control-line" placeholder="name" name="name"> </div>
+                    <div class="form-group">
+                        <label class="comment_info" for="email">Email <span class="help"> e.g. "example@gmail.com"</span></label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email"> </div>
+
+
+
+                    <div class="form-group">
+                        <label class="comment_info" for="comment">Comment</label>
+                        <textarea class="form-control" name="comment" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                       <input type="submit" class="btn btn-success btn-lg">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

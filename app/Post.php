@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User as User;
+use App\Category;
 class Post extends Model
 {
     protected $fillable=['title','body','category_id','photo_id','author'];
@@ -25,17 +26,13 @@ class Post extends Model
         return $this->hasMany('App\Comment');
     }
 
-    public function user(){
-        return $this->belongsTo('App\User');
-    }
+
 
     public function photo(){
         return $this->belongsTo('App\Photo');
     }
 
-    public function category(){
-        return $this->belongsTo('App\Category');
-    }
+
 
     public static function postNr(){
 
@@ -50,5 +47,13 @@ class Post extends Model
 
         $count = $affected;
         return $count;
+    }
+
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 }

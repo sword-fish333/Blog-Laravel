@@ -8,7 +8,8 @@
 .logo{
     border-radius: 20px;
     border:1px solid black;
-    width:2.0em;
+    width:2.2em;
+   margin-left: 650px;
 }
 
 .blog-main{
@@ -76,7 +77,7 @@ body{
     left:0;
     overflow-x: hidden;
     overflow-y:auto;
-    height:100%;
+
 }
 .sidebar .first_link{
     margin-top:30px;
@@ -165,26 +166,23 @@ body{
     color:black;
 }
 
-.comment_name{
-    font-family: 'Slabo 27px', serif;
-    font-size: 1.4em;
-    color:black;
-    padding-left: 20px;
-}
 
-.comment_body{
-    font-family: 'Slabo 27px', serif;
-    font-size: 1.1em;
-    color:black;
-    padding-left: 20px;
-}
+
+
 #comment_title{
     padding-top: 40px;
-    color:	white;
+    color:	#A52A2A;
     font-family: 'PT Serif', serif;
     font-weight:bold;
     font-size: 2em;
 
+}
+
+.category_display{
+    font-family: 'Slabo 27px', serif;
+    font-size: 1.2em;
+    color:	#A52A2A;
+    float: right;
 }
 
 .table th{
@@ -232,14 +230,23 @@ footer .footer-box .fab{
     font-size: 15px;
 }
 
-.side_admin{
+.side_bar{
     background: white;
     color: black;
     font-family:  'Slabo 27px', serif;
     font-size: 1em;
     font-weight: bold;
-}
 
+}
+.side_bar_user{
+    background: white;
+    color: black;
+    font-family:  'Slabo 27px', serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 300%;
+
+}
 .table_head th {
     font-family: 'PT Serif', serif;
     font-weight:bold;
@@ -257,7 +264,13 @@ footer .footer-box .fab{
     color:	#A52A2A;
     text-align: center;
 }
-
+.post_category{
+    float: left;
+    font-family: 'Slabo 27px', serif;
+    font-weight:bold;
+    color:	black;
+    font-size: 1.3em;
+}
 .jumbotron_title{
     font-family: 'PT Serif', serif;
     font-weight:bold;
@@ -265,8 +278,8 @@ footer .footer-box .fab{
     text-align: center;
     font-size: 4em;
 }
-.jumbotron{
-    margin-top: 80px;
+.jumbotron_main{
+
     padding:80px;
     background-image: url('/images/back.jpeg');
 
@@ -278,4 +291,41 @@ footer .footer-box .fab{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.t_body td{
+    color:black !important;
+    font-family:  'Slabo 27px', serif;
+    font-size: 1.2em;
+}
+
+.t_title{
+    font-family: 'PT Serif', serif;
+    font-weight:bold;
+    color:	#A52A2A;
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.admin_login_sign{
+    font-family:  'Slabo 27px', serif;
+    font-weight:bold;
+    color:	black;
+
+    font-size: 1.5em;
+}
+
+.admin_login_title{
+    font-family: 'PT Serif', serif;
+ font-style: italic;
+    color:	#A52A2A;
+text-align: center;
+    font-size: 2em;
+}
+
+.admin_login_info{
+    font-family:  'Slabo 27px', serif;
+
+    color:	black;
+    font-size: 1.2em;
 }
