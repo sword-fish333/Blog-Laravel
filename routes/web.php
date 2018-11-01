@@ -11,9 +11,9 @@
 |
 */
 
-Auth::routes();
-Route::group(['middleware' => ['auth']], function() {
-    //  Route::get('/home', 'HomeController@index')->name('firstPage');
+        Auth::routes();
+        Route::group(['middleware' => ['auth']], function() {
+      Route::get('/', 'HomeController@index')->name('firstPage');
 
     Route::get('/allPosts', 'PostController@firstPage')->name('firstPage');
 
@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth']], function() {
     //route for login admin
     Route::get('/admin_login', 'Admin\Auth\LoginController@showLoginForm')->name('adminLogin');
     Route::post('/admin_login', 'Admin\Auth\LoginController@login');
+
 Route::group(['middleware' => ['auth:admin']], function () {
     Route::get('admin/home', 'HomeController@adminPage')->name('adminPage');
 
@@ -97,4 +98,16 @@ Route::group(['middleware' => ['auth:admin']], function () {
 //view one post
     Route::get('/post/{id}', 'PostController@show')->name('showOnePost');
 //route for updating a post
+    Route::get('/admin/newadmin', 'AdminController@showCreateAdmin')->name('showcreateAdmin');
+
+    Route::post('/admin/newadmin', 'AdminController@saveUser')->name('saveUser');
+
+    Route::get('/admin/roles', 'RoleController@index')->name('showRolesTable');
+
+    Route::get('/admin/role', 'RoleController@create')->name('createRole');
+    Route::post('/admin/role', 'RoleController@store')->name('saveRole');
+
+    Route::delete('/admin/role/{id}', 'RoleController@destroy')->name('deleteRole');
+
+    Route::resource('/admin/permission', 'PermissionController');
 });

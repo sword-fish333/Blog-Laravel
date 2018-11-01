@@ -34,7 +34,7 @@
                         <td>{{$post->created_at->diffForHumans()}}</td>
                         <td>{{$post->updated_at->diffForHumans()}}</td>
                         <td>                <img  class="img-thumbnail"
-                          src="{{Storage::disk('local')->url($post->image)}}" alt="" style=" width:100px;">
+                          src="{{Storage::disk('local')->url($post->image)}}" alt="" style="height: 100px; width:100px;">
                         </td>
 
                         <td><a href="{{route('showOnePost',$post->id)}}" class="btn btn-success"><i class="far fa-eye"></i></a></td>

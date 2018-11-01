@@ -40,10 +40,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="status" class="custom-control-input" id="status">
-                                    <label class="custom-control-label pl-4" for="status">&nbsp;Published</label>
-                                </div>
+
 
                                 <div class="form-group m-b-5 mt-5">
                                     <textarea name="body" class="form-control" rows="10" id="body"></textarea>

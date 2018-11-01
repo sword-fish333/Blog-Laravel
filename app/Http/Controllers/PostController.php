@@ -118,4 +118,29 @@ class PostController extends Controller
     }
 
 
+    public function storeAdmin(Request $request)
+
+    {
+        $this->validate($request,[
+            'title'=>'required|unique:posts|min:5|max:2000',
+            'category'=>'required',
+            'body'=>'required|min:5|max:99999999999',
+            'image'=>'required'
+        ]);
+        if($request->hasFile('image')) {
+
+            $imageName= $request->image->store('public/images');
+        }
+        $post=new Post;
+        $post->title=$request->title;
+        $post->body=$request->body;
+        $post->category=$request->category;
+        $post->status=false;
+        $post->image=$imageName;
+        $post->author= Auth::user()->id;
+        $post->save();
+
+        return redirect(route('postsTable'));
+    }
+
 }

@@ -24,7 +24,7 @@ class HomeController extends Controller
     }
 
     public function adminPage(){
-        session()->flash('logedin', 'Welcome  '."<span style='color: black;'><u><i>".Auth::user()->name."</i></u></span>");
-        return view('admin/home');
+       session()->flash('logedin', 'Welcome  '."<span style='color: black;'><u><i>".Auth::user()->name."</i></u></span>");
+        return view('admin.home');
     }
 }

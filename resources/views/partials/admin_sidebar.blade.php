@@ -24,6 +24,10 @@
                 </li>
                 <li> <a class="" href="{{route('adminShowCreate')}}" aria-expanded="false"><i class="ti-pencil"></i><span class="hide-menu"> Write Post</span></a>
                 </li>
+                <li> <a class="" href="{{route('showRolesTable')}}" aria-expanded="false"><i class="ti-direction-alt"></i><span class="hide-menu">Roles Table</span></a>
+                </li>
+                <li> <a class="" href="{{route('permission.index')}}" aria-expanded="false"><i class="ti-thumb-up"></i><span class="hide-menu">Permissions</span></a>
+                </li>
                 <li class="nav-small-cap"></li>
 
             </ul>

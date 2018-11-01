@@ -7,6 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Session;
 use App\Category;
+use App\Role;
 
 class AdminController extends Controller
 {
@@ -46,5 +47,19 @@ class AdminController extends Controller
     public function adminPosts(){
         $posts=Post::orderByDesc('created_at')->paginate(4);
         return view('post.adminPosts',array('posts'=>$posts));
+    }
+
+    public function showCreateAdmin(){
+        $roles=Role::all();
+        return view('admin.newUser',array('roles'=>$roles));
+    }
+
+    public function saveAdmin(){
+
+    }
+
+    public function saveUser(Request $request){
+
+        return $request;
     }
 }

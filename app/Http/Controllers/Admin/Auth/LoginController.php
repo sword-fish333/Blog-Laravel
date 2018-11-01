@@ -4,7 +4,7 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Admin;
+use App\Post;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,10 +29,10 @@ class LoginController extends Controller
         return view('admin.login');
     }
     public function login(Request $request)
-    {
+    {   $posts=Post::orderByDesc('created_at')->get();
         $this->validateLogin($request);
         if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
+            return view('post.posts_table',array('posts'=>$posts));
         }
         return $this->sendFailedLoginResponse($request);
     }
